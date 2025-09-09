@@ -1,44 +1,221 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu Portfólio - [Seu Nome]</title>
+    <title>[COLOQUE SEU NOME AQUI] - Portfólio de Desenvolvedor Front-End</title>
     <style>
-        body { font-family: sans-serif; line-height: 1.6; padding: 2em; }
-        h1, h2 { color: #333; }
-        .project { border-left: 4px solid #0366d6; padding-left: 1em; margin-bottom: 2em; }
+        :root {
+            --cor-primaria: #0d1117;
+            --cor-secundaria: #161b22;
+            --cor-destaque: #58a6ff;
+            --cor-texto: #c9d1d9;
+            --cor-texto-secundario: #8b949e;
+            --cor-borda: #30363d;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+            margin: 0;
+            background-color: var(--cor-primaria);
+            color: var(--cor-texto);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            color: var(--cor-texto);
+        }
+
+        .header .subtitle {
+            font-size: 1.2em;
+            color: var(--cor-destaque);
+            margin-top: 0;
+        }
+        
+        .social-links a {
+            color: var(--cor-texto-secundario);
+            text-decoration: none;
+            margin: 0 10px;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: var(--cor-destaque);
+        }
+
+        .section {
+            background-color: var(--cor-secundaria);
+            padding: 30px;
+            margin-bottom: 30px;
+            border-radius: 6px;
+            border: 1px solid var(--cor-borda);
+        }
+
+        .section h2 {
+            margin-top: 0;
+            border-bottom: 2px solid var(--cor-destaque);
+            padding-bottom: 10px;
+            color: var(--cor-texto);
+        }
+        
+        .about-me p {
+            font-size: 1.1em;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .skill-item {
+            background-color: var(--cor-primaria);
+            text-align: center;
+            padding: 15px;
+            border-radius: 6px;
+            font-weight: bold;
+            border: 1px solid var(--cor-borda);
+        }
+        
+        .project {
+            margin-bottom: 25px;
+            padding-bottom: 25px;
+            border-bottom: 1px solid var(--cor-borda);
+        }
+        
+        .project:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .project h3 {
+            margin-top: 0;
+            color: var(--cor-destaque);
+        }
+
+        .project-links a {
+            background-color: var(--cor-destaque);
+            color: var(--cor-primaria);
+            padding: 8px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-right: 10px;
+            transition: opacity 0.3s;
+        }
+
+        .project-links a:hover {
+            opacity: 0.8;
+        }
+        
+        .project-links .repo-link {
+            background-color: transparent;
+            color: var(--cor-destaque);
+            border: 1px solid var(--cor-destaque);
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: var(--cor-texto-secundario);
+        }
+
     </style>
 </head>
 <body>
-    <header>
-        <h1>Olá, meu nome é Aleson</h1>
-        <p>Sou um desenvolvedor Front-End em formação, apaixonado por criar interfaces intuitivas e dinâmicas.</p>
-        <p>
-            <a href="https://github.com/seu-nome-de-usuario" target="_blank">Meu GitHub</a> |
-            <a href="https://www.linkedin.com/in/seu-perfil/" target="_blank">Meu LinkedIn</a>
-        </p>
-    </header>
 
-    <main>
-        <h2>Meus Projetos</h2>
-        <div class="project">
-            <h3>Nome do Projeto 1</h3>
-            <p>Uma breve descrição do seu projeto. Quais tecnologias você usou? Qual problema ele resolve?</p>
-            <p>
-                <a href="[Link para o projeto]" target="_blank">Ver projeto online</a> |
-                <a href="[Link para o repositório no GitHub]" target="_blank">Ver código-fonte</a>
-            </p>
-        </div>
+    <div class="container">
 
-        <div class="project">
-            <h3>Nome do Projeto 2</h3>
-            <p>Uma breve descrição do seu projeto. Tente destacar seus conhecimentos em HTML, CSS e JavaScript.</p>
+        <header class="header">
+            <h1>[COLOQUE SEU NOME AQUI]</h1>
+            <p class="subtitle">Estudante de [SEU CURSO] | Aspirante a Desenvolvedor Front-End</p>
+            <div class="social-links">
+                <a href="https://github.com/[SEU USUÁRIO DO GITHUB]" target="_blank">GitHub</a> |
+                <a href="https://linkedin.com/in/[SEU USUÁRIO DO LINKEDIN]" target="_blank">LinkedIn</a> |
+                <a href="mailto:[SEU EMAIL]">Email</a>
+            </div>
+        </header>
+
+        <section class="section about-me">
+            <h2>Sobre Mim</h2>
             <p>
-                <a href="[Link para o projeto]" target="_blank">Ver projeto online</a> |
-                <a href="[Link para o repositório no GitHub]" target="_blank">Ver código-fonte</a>
+                Olá! Sou um estudante de tecnologia proativo e dedicado, com um forte interesse em desenvolvimento web e na criação de interfaces de usuário modernas e responsivas. Estou buscando uma oportunidade de estágio para aplicar meus conhecimentos em HTML, CSS e JavaScript, e para aprender com profissionais experientes na área.
             </p>
-        </div>
-    </main>
+        </section>
+
+        <section class="section skills">
+            <h2>Habilidades Técnicas</h2>
+            <div class="skills-grid">
+                <div class="skill-item">HTML5</div>
+                <div class="skill-item">CSS3</div>
+                <div class="skill-item">JavaScript</div>
+                <div class="skill-item">React.js</div> <div class="skill-item">Git & GitHub</div>
+                <div class="skill-item">Design Responsivo</div>
+            </div>
+        </section>
+
+        <section class="section projects">
+            <h2>Projetos</h2>
+
+            <div class="project">
+                <h3>[NOME DO PROJETO 1]</h3>
+                <p>
+                    [BREVE DESCRIÇÃO DO PROJETO. Ex: Uma landing page para um evento fictício, construída com foco em design responsivo e semântica HTML.]
+                </p>
+                <p><strong>Tecnologias:</strong> HTML5, CSS3 (Flexbox/Grid).</p>
+                <div class="project-links">
+                    <a href="[LINK PARA VER O PROJETO 1 ONLINE]" target="_blank">Ver Projeto</a>
+                    <a href="[LINK PARA O REPOSITÓRIO DO PROJETO 1]" target="_blank" class="repo-link">Código Fonte</a>
+                </div>
+            </div>
+
+            <div class="project">
+                <h3>[NOME DO PROJETO 2]</h3>
+                <p>
+                    [BREVE DESCRIÇÃO DO PROJETO. Ex: Uma aplicação de lista de tarefas (To-Do List) que permite ao usuário adicionar e remover itens, utilizando JavaScript para manipular o DOM.]
+                </p>
+                <p><strong>Tecnologias:</strong> HTML5, CSS3, JavaScript.</p>
+                <div class="project-links">
+                    <a href="[LINK PARA VER O PROJETO 2 ONLINE]" target="_blank">Ver Projeto</a>
+                    <a href="[LINK PARA O REPOSITÓRIO DO PROJETO 2]" target="_blank" class="repo-link">Código Fonte</a>
+                </div>
+            </div>
+            
+            <div class="project">
+                <h3>[NOME DO PROJETO 3]</h3>
+                <p>
+                    [BREVE DESCRIÇÃO DO PROJETO. Ex: Um clone da interface de um serviço popular, como Netflix ou Spotify, desenvolvido com React para praticar componentização e estado.]
+                </p>
+                <p><strong>Tecnologias:</strong> React.js, CSS3.</p>
+                <div class="project-links">
+                    <a href="[LINK PARA VER O PROJETO 3 ONLINE]" target="_blank">Ver Projeto</a>
+                    <a href="[LINK PARA O REPOSITÓRIO DO PROJETO 3]" target="_blank" class="repo-link">Código Fonte</a>
+                </div>
+            </div>
+
+        </section>
+
+        <footer>
+            <p>&copy; 2025 - Desenvolvido por [SEU NOME]</p>
+        </footer>
+
+    </div>
+
 </body>
 </html>

@@ -3,219 +3,223 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>[COLOQUE SEU NOME AQUI] - Portfólio de Desenvolvedor Front-End</title>
+    <title>Calculadora de Juros Jurídicos - Jus Cálculos</title>
     <style>
-        :root {
-            --cor-primaria: #0d1117;
-            --cor-secundaria: #161b22;
-            --cor-destaque: #58a6ff;
-            --cor-texto: #c9d1d9;
-            --cor-texto-secundario: #8b949e;
-            --cor-borda: #30363d;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+        * {
             margin: 0;
-            background-color: var(--cor-primaria);
-            color: var(--cor-texto);
-            line-height: 1.6;
-        }
-
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
-
-        .header {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-
-        .header h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
-            color: var(--cor-texto);
-        }
-
-        .header .subtitle {
-            font-size: 1.2em;
-            color: var(--cor-destaque);
-            margin-top: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
         
-        .social-links a {
-            color: var(--cor-texto-secundario);
-            text-decoration: none;
-            margin: 0 10px;
-            font-weight: bold;
-            transition: color 0.3s;
-        }
-
-        .social-links a:hover {
-            color: var(--cor-destaque);
-        }
-
-        .section {
-            background-color: var(--cor-secundaria);
-            padding: 30px;
-            margin-bottom: 30px;
-            border-radius: 6px;
-            border: 1px solid var(--cor-borda);
-        }
-
-        .section h2 {
-            margin-top: 0;
-            border-bottom: 2px solid var(--cor-destaque);
-            padding-bottom: 10px;
-            color: var(--cor-texto);
-        }
-        
-        .about-me p {
-            font-size: 1.1em;
-        }
-
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-            gap: 15px;
-            margin-top: 20px;
-        }
-
-        .skill-item {
-            background-color: var(--cor-primaria);
-            text-align: center;
-            padding: 15px;
-            border-radius: 6px;
-            font-weight: bold;
-            border: 1px solid var(--cor-borda);
-        }
-        
-        .project {
-            margin-bottom: 25px;
-            padding-bottom: 25px;
-            border-bottom: 1px solid var(--cor-borda);
-        }
-        
-        .project:last-child {
-            border-bottom: none;
-            margin-bottom: 0;
-            padding-bottom: 0;
-        }
-
-        .project h3 {
-            margin-top: 0;
-            color: var(--cor-destaque);
-        }
-
-        .project-links a {
-            background-color: var(--cor-destaque);
-            color: var(--cor-primaria);
-            padding: 8px 15px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: bold;
-            margin-right: 10px;
-            transition: opacity 0.3s;
-        }
-
-        .project-links a:hover {
-            opacity: 0.8;
-        }
-        
-        .project-links .repo-link {
-            background-color: transparent;
-            color: var(--cor-destaque);
-            border: 1px solid var(--cor-destaque);
-        }
-
-        footer {
-            text-align: center;
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             padding: 20px;
-            color: var(--cor-texto-secundario);
         }
-
+        
+        .container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            padding: 40px;
+            max-width: 500px;
+            width: 100%;
+        }
+        
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 10px;
+            font-size: 28px;
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 14px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #555;
+            font-weight: bold;
+        }
+        
+        input, select {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+        
+        input:focus, select:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        
+        button {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        
+        button:hover {
+            transform: translateY(-2px);
+        }
+        
+        .result {
+            margin-top: 30px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            display: none;
+        }
+        
+        .result.show {
+            display: block;
+            animation: fadeIn 0.5s;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .result-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            padding: 10px;
+            background: white;
+            border-radius: 5px;
+        }
+        
+        .result-label {
+            color: #666;
+        }
+        
+        .result-value {
+            font-weight: bold;
+            color: #333;
+        }
+        
+        .error {
+            color: #e74c3c;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+        
+        @media (max-width: 480px) {
+            .container {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 24px;
+            }
+        }
     </style>
 </head>
 <body>
-
     <div class="container">
-
-        <header class="header">
-            <h1>[COLOQUE SEU NOME AQUI]</h1>
-            <p class="subtitle">Estudante de [SEU CURSO] | Aspirante a Desenvolvedor Front-End</p>
-            <div class="social-links">
-                <a href="https://github.com/[SEU USUÁRIO DO GITHUB]" target="_blank">GitHub</a> |
-                <a href="https://linkedin.com/in/[SEU USUÁRIO DO LINKEDIN]" target="_blank">LinkedIn</a> |
-                <a href="mailto:[SEU EMAIL]">Email</a>
-            </div>
-        </header>
-
-        <section class="section about-me">
-            <h2>Sobre Mim</h2>
-            <p>
-                Olá! Sou um estudante de tecnologia proativo e dedicado, com um forte interesse em desenvolvimento web e na criação de interfaces de usuário modernas e responsivas. Estou buscando uma oportunidade de estágio para aplicar meus conhecimentos em HTML, CSS e JavaScript, e para aprender com profissionais experientes na área.
-            </p>
-        </section>
-
-        <section class="section skills">
-            <h2>Habilidades Técnicas</h2>
-            <div class="skills-grid">
-                <div class="skill-item">HTML5</div>
-                <div class="skill-item">CSS3</div>
-                <div class="skill-item">JavaScript</div>
-                <div class="skill-item">React.js</div> <div class="skill-item">Git & GitHub</div>
-                <div class="skill-item">Design Responsivo</div>
-            </div>
-        </section>
-
-        <section class="section projects">
-            <h2>Projetos</h2>
-
-            <div class="project">
-                <h3>[NOME DO PROJETO 1]</h3>
-                <p>
-                    [BREVE DESCRIÇÃO DO PROJETO. Ex: Uma landing page para um evento fictício, construída com foco em design responsivo e semântica HTML.]
-                </p>
-                <p><strong>Tecnologias:</strong> HTML5, CSS3 (Flexbox/Grid).</p>
-                <div class="project-links">
-                    <a href="[LINK PARA VER O PROJETO 1 ONLINE]" target="_blank">Ver Projeto</a>
-                    <a href="[LINK PARA O REPOSITÓRIO DO PROJETO 1]" target="_blank" class="repo-link">Código Fonte</a>
-                </div>
-            </div>
-
-            <div class="project">
-                <h3>[NOME DO PROJETO 2]</h3>
-                <p>
-                    [BREVE DESCRIÇÃO DO PROJETO. Ex: Uma aplicação de lista de tarefas (To-Do List) que permite ao usuário adicionar e remover itens, utilizando JavaScript para manipular o DOM.]
-                </p>
-                <p><strong>Tecnologias:</strong> HTML5, CSS3, JavaScript.</p>
-                <div class="project-links">
-                    <a href="[LINK PARA VER O PROJETO 2 ONLINE]" target="_blank">Ver Projeto</a>
-                    <a href="[LINK PARA O REPOSITÓRIO DO PROJETO 2]" target="_blank" class="repo-link">Código Fonte</a>
-                </div>
+        <h1>⚖️ Calculadora Jurídica</h1>
+        <p class="subtitle">Cálculo de juros moratórios e correção monetária</p>
+        
+        <form id="calcForm">
+            <div class="form-group">
+                <label for="valor">Valor Principal (R$)</label>
+                <input type="number" id="valor" step="0.01" min="0" required>
             </div>
             
-            <div class="project">
-                <h3>[NOME DO PROJETO 3]</h3>
-                <p>
-                    [BREVE DESCRIÇÃO DO PROJETO. Ex: Um clone da interface de um serviço popular, como Netflix ou Spotify, desenvolvido com React para praticar componentização e estado.]
-                </p>
-                <p><strong>Tecnologias:</strong> React.js, CSS3.</p>
-                <div class="project-links">
-                    <a href="[LINK PARA VER O PROJETO 3 ONLINE]" target="_blank">Ver Projeto</a>
-                    <a href="[LINK PARA O REPOSITÓRIO DO PROJETO 3]" target="_blank" class="repo-link">Código Fonte</a>
-                </div>
+            <div class="form-group">
+                <label for="dataInicial">Data Inicial</label>
+                <input type="date" id="dataInicial" required>
             </div>
-
-        </section>
-
-        <footer>
-            <p>&copy; 2025 - Desenvolvido por [SEU NOME]</p>
-        </footer>
-
+            
+            <div class="form-group">
+                <label for="dataFinal">Data Final</label>
+                <input type="date" id="dataFinal" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="taxaJuros">Taxa de Juros (% ao mês)</label>
+                <input type="number" id="taxaJuros" step="0.01" min="0" value="1.0" required>
+            </div>
+            
+            <button type="submit">Calcular Valor Atualizado</button>
+        </form>
+        
+        <div id="result" class="result">
+            <div class="result-item">
+                <span class="result-label">Valor Original:</span>
+                <span class="result-value" id="valorOriginal"></span>
+            </div>
+            <div class="result-item">
+                <span class="result-label">Juros Totais:</span>
+                <span class="result-value" id="jurosTotais"></span>
+            </div>
+            <div class="result-item">
+                <span class="result-label">Valor Atualizado:</span>
+                <span class="result-value" id="valorAtualizado"></span>
+            </div>
+            <div class="result-item">
+                <span class="result-label">Período:</span>
+                <span class="result-value" id="periodo"></span>
+            </div>
+        </div>
     </div>
 
+    <script>
+        document.getElementById('calcForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const valor = parseFloat(document.getElementById('valor').value);
+            const dataInicial = new Date(document.getElementById('dataInicial').value);
+            const dataFinal = new Date(document.getElementById('dataFinal').value);
+            const taxaJuros = parseFloat(document.getElementById('taxaJuros').value);
+            
+            // Validações
+            if (dataInicial >= dataFinal) {
+                alert('A data final deve ser posterior à data inicial!');
+                return;
+            }
+            
+            // Cálculo do período em meses
+            const diffTime = Math.abs(dataFinal - dataInicial);
+            const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+            const meses = diffDays / 30.44; // Média de dias por mês
+            
+            // Cálculo dos juros compostos
+            const juros = valor * (Math.pow(1 + (taxaJuros / 100), meses) - 1);
+            const valorAtualizado = valor + juros;
+            
+            // Exibição dos resultados
+            document.getElementById('valorOriginal').textContent = `R$ ${valor.toFixed(2)}`;
+            document.getElementById('jurosTotais').textContent = `R$ ${juros.toFixed(2)}`;
+            document.getElementById('valorAtualizado').textContent = `R$ ${valorAtualizado.toFixed(2)}`;
+            document.getElementById('periodo').textContent = `${Math.ceil(meses)} meses`;
+            
+            document.getElementById('result').classList.add('show');
+        });
+    </script>
 </body>
 </html>
